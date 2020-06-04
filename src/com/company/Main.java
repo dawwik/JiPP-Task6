@@ -14,7 +14,7 @@ public class Main {
         }
         Collections.shuffle(list);
 
-        System.out.println("Losowa kolejność liczb z przedzialu [ 0 - 20 ] to: ");
+        System.out.println("Losowa kolejność liczb z przedzialu [ 0 - 10 ] to: ");
         System.out.println(list);
 
 
