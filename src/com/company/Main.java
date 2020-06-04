@@ -1,36 +1,42 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.Scanner;
+
 
 public class Main {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         List<Double> list = new ArrayList<>();
-        double next = 0;
-        boolean numberOfNumbers = true;
-        int licznik = 0;
-        System.out.println("Podaj 10 liczb ");
-        while (numberOfNumbers) {
-            next = scanner.nextDouble();
-
-            if (licznik <4) {
-                list.add(next);
-                licznik++;
-            } else
-                numberOfNumbers = false;
+        for(int i = 0; i < 10; i++){
+            list.add((double)i);
         }
+        Collections.shuffle(list);
+
+        System.out.println("Losowa kolejność liczb z przedzialu [ 0 - 20 ] to: ");
+        System.out.println(list);
 
 
         double sum = 0;
+        Collections.sort(list);
         for (Double numbers : list) {
             sum += numbers;
         }
+        System.out.println("Posortowane liczby to: ");
+        System.out.println(list);
+
         double avgerage = sum / list.size();
+
+        double median;
+        if (list.size() % 2 == 1)
+            median = (list.get(list.size() / 2) + list.get(list.size() / 2 +1))/2;
+         else
+            median = list.get(list.size() / 2);
+            System.out.println(median);
 
         System.out.println("Suma tych liczb wynosi: " + sum);
         System.out.println("Srednia wynosi: " + avgerage);
-    }
+        System.out.println("Mediana wynosi: " + median);
+   }
 }
